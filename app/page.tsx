@@ -83,7 +83,8 @@ const visualOverrides = `
   .fum-main .eyebrow,.fum-main .small { color:#a71930!important; }
   .fum-main .num { color:#c43b52!important; }
   .fum-main .grid>div,.fum-main .grid>figure,.fum-main .card,.fum-main .dcard {
-    position:relative; overflow:hidden; border:1px solid rgba(255,255,255,.88)!important;
+    position:relative; overflow:visible; height:auto!important; min-height:0!important;
+    min-width:0; box-sizing:border-box; border:1px solid rgba(255,255,255,.88)!important;
     border-radius:22px!important;
     background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(255,255,255,.56) 58%,rgba(250,233,231,.48))!important;
     box-shadow:0 14px 38px rgba(82,78,76,.08),inset 0 1px 0 rgba(255,255,255,.95)!important;
@@ -93,6 +94,20 @@ const visualOverrides = `
   .fum-main .grid>div:hover,.fum-main .grid>figure:hover,.fum-main .card:hover,.fum-main .dcard:hover {
     transform:translateY(-5px);border-color:rgba(196,59,82,.28)!important;
     box-shadow:0 22px 48px rgba(82,78,76,.13),inset 0 1px 0 #fff!important;
+  }
+  /* Keep long Vietnamese card copy fully readable; crop only dedicated media wrappers. */
+  .fum-main .grid>div,.fum-main .grid>figure,.fum-main .card,.fum-main .dcard {
+    overflow:visible!important; height:auto!important; min-height:0!important;
+  }
+  .fum-main .grid>div h3,.fum-main .grid>div p,.fum-main .grid>div span,
+  .fum-main .grid>figure h3,.fum-main .grid>figure p,.fum-main .card h3,
+  .fum-main .card p,.fum-main .dcard h3,.fum-main .dcard p {
+    max-width:100%; overflow:visible!important; white-space:normal!important;
+    overflow-wrap:anywhere; word-break:normal; text-overflow:clip;
+    -webkit-line-clamp:unset!important; line-clamp:unset!important;
+  }
+  .fum-main .grid>div img,.fum-main .grid>figure img,.fum-main .card img,.fum-main .dcard img {
+    max-width:100%;
   }
   .fum-main .grid img,.fum-main .card img,.fum-main .dcard img {
     filter:saturate(.96) contrast(1.01);transition:transform .55s ease,filter .55s ease;
