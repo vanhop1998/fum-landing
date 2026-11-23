@@ -170,6 +170,22 @@ const visualOverrides = `
     background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(244,239,234,.78))!important;
     border-color:rgba(255,255,255,.9)!important;
   }
+  /* Light-glass contrast pass: legacy dark-section copy must not remain white/low-contrast. */
+  .fum-main .dark { color:#34404c!important; }
+  .fum-main .dark :is(h1,h2,h3,h4,p,li,td,figcaption,blockquote,summary) { color:#34404c!important; }
+  .fum-main .dark .lead,.fum-main .dark p[style*="color:#C9C9CE"],
+  .fum-main .dark p[style*="color: #C9C9CE"],
+  .fum-main .dark p[style*="color:#A9A9AF"],
+  .fum-main .dark p[style*="color: #A9A9AF"],
+  .fum-main .dark span[style*="color:#A9A9AF"],
+  .fum-main .dark span[style*="color: #A9A9AF"],
+  .fum-main .dark [style*="color:#E5E5E7"],
+  .fum-main .dark [style*="color: #E5E5E7"] { color:#59636e!important; }
+  .fum-main .dark .pill:not([style*="background:#9A0000"]) { color:#7e2637!important;border-color:rgba(126,38,55,.28)!important; }
+  .fum-main .dark [style*="background:#9A0000"],
+  .fum-main .dark [style*="background: #9A0000"] { color:#fff!important; }
+  .fum-main .dark [style*="background:#9A0000"] *,
+  .fum-main .dark [style*="background: #9A0000"] * { color:inherit!important; }
   .fum-main [style*="color:#111113"],.fum-main [style*="color: #111113"],
   .fum-main [style*="color:#4B4B52"],.fum-main [style*="color: #4B4B52"],
   .fum-main [style*="color:#33333A"] { color:#59636e!important; }
