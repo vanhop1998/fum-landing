@@ -2,7 +2,7 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, MeshTransmissionMaterial } from "@react-three/drei";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Component, Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 import type { Group } from "three";
 import type { MutableRefObject } from "react";
 
@@ -49,25 +49,39 @@ function GlassForms({ pointer }: { pointer: MutableRefObject<{ x: number; y: num
   );
 }
 
+class WebGLErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
+  state = { hasError: false };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) return null;
+    return this.props.children;
+  }
+}
+
 export default function Hero3DScene() {
   const pointer = useRef({ x: 0, y: 0 });
   const [motionAllowed, setMotionAllowed] = useState(false);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setMotionAllowed(!media.matches);
-
-    const onPreferenceChange = (event: MediaQueryListEvent) => setMotionAllowed(!event.matches);
+    const updateCapability = () => setMotionAllowed(!media.matches && window.innerWidth > 720);
     const onPointerMove = (event: PointerEvent) => {
       pointer.current.x = (event.clientX / window.innerWidth - 0.5) * 2;
       pointer.current.y = (event.clientY / window.innerHeight - 0.5) * 2;
     };
 
-    media.addEventListener("change", onPreferenceChange);
+    updateCapability();
+    media.addEventListener("change", updateCapability);
+    window.addEventListener("resize", updateCapability, { passive: true });
     window.addEventListener("pointermove", onPointerMove, { passive: true });
 
     return () => {
-      media.removeEventListener("change", onPreferenceChange);
+      media.removeEventListener("change", updateCapability);
+      window.removeEventListener("resize", updateCapability);
       window.removeEventListener("pointermove", onPointerMove);
     };
   }, []);
@@ -75,19 +89,21 @@ export default function Hero3DScene() {
   if (!motionAllowed) return null;
 
   return (
-    <Canvas
-      camera={{ position: [0, 0, 5.4], fov: 42 }}
-      dpr={[1, 1.25]}
-      gl={{ alpha: true, antialias: true, powerPreference: "low-power" }}
-      frameloop="always"
-      onCreated={({ gl }) => gl.setClearColor(0x000000, 0)}
-    >
-      <Suspense fallback={null}>
-        <ambientLight intensity={0.55} />
-        <directionalLight position={[3, 4, 5]} intensity={2.2} />
-        <pointLight position={[-3, -2, 2]} intensity={2.4} color="#f26363" />
-        <GlassForms pointer={pointer} />
-      </Suspense>
-    </Canvas>
+    <WebGLErrorBoundary>
+      <Canvas
+        camera={{ position: [0, 0, 5.4], fov: 42 }}
+        dpr={[1, 1.25]}
+        gl={{ alpha: true, antialias: true, powerPreference: "low-power" }}
+        frameloop="always"
+        onCreated={({ gl }) => gl.setClearColor(0x000000, 0)}
+      >
+        <Suspense fallback={null}>
+          <ambientLight intensity={0.55} />
+          <directionalLight position={[3, 4, 5]} intensity={2.2} />
+          <pointLight position={[-3, -2, 2]} intensity={2.4} color="#f26363" />
+          <GlassForms pointer={pointer} />
+        </Suspense>
+      </Canvas>
+    </WebGLErrorBoundary>
   );
 }
