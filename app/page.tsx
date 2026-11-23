@@ -260,6 +260,61 @@ const visualOverrides = `
     .fum-main .fum > section.dark:not(.sec) > div:first-child { grid-template-columns:1fr!important; }
   }
 
+  /* Gallery polish: make each photo a complete glass tile with breathing room. */
+  .fum-main figure {
+    padding:8px!important;
+    gap:10px!important;
+    border-radius:20px!important;
+  }
+  .fum-main figure > div {
+    width:100%;
+    border-radius:14px!important;
+    overflow:hidden!important;
+    background:#e8e1dc;
+  }
+  .fum-main figure > div img {
+    transform:scale(1.035);
+    transform-origin:center 54%;
+    transition:transform .55s ease,filter .55s ease;
+  }
+  .fum-main figure:hover > div img {
+    transform:scale(1.085);
+    filter:saturate(1.08) contrast(1.02);
+  }
+  .fum-main figure figcaption {
+    padding:0 3px 3px!important;
+    color:#4b5662!important;
+    font-size:14px!important;
+    line-height:1.45!important;
+    overflow-wrap:anywhere;
+  }
+
+  /* CTA email button: white text on the brand-red surface. */
+  .fum-main #tham-gia > div > div:last-child > a.pill {
+    background:linear-gradient(135deg,#bd344b,#98243b)!important;
+    border:1px solid rgba(255,255,255,.72)!important;
+    color:#fff!important;
+    box-shadow:0 12px 30px rgba(167,25,48,.18),inset 0 1px 0 rgba(255,255,255,.28)!important;
+  }
+  .fum-main #tham-gia > div > div:last-child > a.pill:hover {
+    color:#fff!important;
+    filter:brightness(1.06);
+  }
+
+  /* Footer on the light canvas: keep all identity text readable. */
+  .fum-main footer,
+  .fum-main footer span { color:#59636e!important; }
+  .fum-main footer span[style*="font-weight:700"],
+  .fum-main footer span[style*="font-weight: 700"] { color:#303945!important; }
+  .fum-main footer a { color:#98243b!important;text-decoration-thickness:1px;text-underline-offset:3px; }
+  .fum-main footer a:hover { color:#bd344b!important; }
+  .fum-main footer img { object-position:left center; }
+
+  @media(max-width:760px) {
+    .fum-main figure { padding:7px!important; }
+    .fum-main figure figcaption { font-size:13px!important; }
+  }
+
   @media(prefers-reduced-transparency:reduce) {
     .fum-main .grid>div,.fum-main .grid>figure,.fum-main .card,.fum-main .dcard,.fum-main .tbl {
       background:#f5f1ed!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
