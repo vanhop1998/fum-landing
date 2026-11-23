@@ -315,6 +315,137 @@ const visualOverrides = `
     .fum-main figure figcaption { font-size:13px!important; }
   }
 
+  /* Hero layout correction: balanced copy/photo proportions and tighter transition to stats. */
+  .fum-main #top {
+    min-height:0!important;
+    display:block!important;
+    padding:104px 24px 46px!important;
+    background:
+      radial-gradient(ellipse at 82% 18%,rgba(219,91,111,.14),transparent 36%),
+      radial-gradient(ellipse at 12% 80%,rgba(201,181,155,.18),transparent 34%),
+      linear-gradient(135deg,#fffdf9 0%,#f5eee8 52%,#f8f3ef 100%)!important;
+  }
+  .fum-main #top > div {
+    width:100%!important;
+    max-width:1320px!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1.68fr) minmax(300px,.78fr)!important;
+    align-items:center!important;
+    gap:24px!important;
+  }
+  .fum-main #top > div > div:first-child {
+    min-width:0!important;
+    gap:18px!important;
+    padding:30px 32px!important;
+    border:1px solid rgba(255,255,255,.92)!important;
+    border-radius:26px!important;
+    background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(255,255,255,.66))!important;
+    box-shadow:0 18px 44px rgba(82,78,76,.08),inset 0 1px 0 #fff!important;
+    backdrop-filter:blur(18px) saturate(1.15);
+    -webkit-backdrop-filter:blur(18px) saturate(1.15);
+  }
+  .fum-main #top > div > div:first-child > p:first-child {
+    color:#9e263d!important;
+    font-size:13px!important;
+    line-height:1.4!important;
+    letter-spacing:1.6px!important;
+  }
+  .fum-main #top h1 {
+    max-width:900px!important;
+    font-size:clamp(40px,4.15vw,60px)!important;
+    line-height:1.08!important;
+    letter-spacing:-.052em!important;
+    font-weight:800!important;
+    text-wrap:balance!important;
+    color:#303945!important;
+  }
+  .fum-main #top > div > div:first-child > p:not(:first-child) {
+    max-width:650px!important;
+    font-size:17px!important;
+    line-height:1.65!important;
+    color:#59636e!important;
+  }
+  .fum-main #top > div > div:first-child > div:last-child {
+    gap:12px!important;
+    margin-top:2px!important;
+  }
+  .fum-main #top > div > div:first-child > div:last-child .pill {
+    min-height:48px!important;
+    padding:0 24px!important;
+  }
+  .fum-main #top > div > div:first-child > div:last-child a:first-child {
+    background:linear-gradient(135deg,#bd344b,#98243b)!important;
+    color:#fff!important;
+    border:1px solid rgba(255,255,255,.8)!important;
+  }
+  .fum-main #top > div > div:first-child > div:last-child a:last-child {
+    background:rgba(255,255,255,.76)!important;
+    color:#7e2637!important;
+    border:1px solid rgba(152,36,59,.22)!important;
+  }
+  .fum-main #top > div > div:nth-child(2) {
+    min-width:0!important;
+    width:100%!important;
+  }
+  .fum-main #top > div > div:nth-child(2) > div {
+    width:100%!important;
+    aspect-ratio:4/5!important;
+    max-height:520px!important;
+    border:1px solid rgba(255,255,255,.9)!important;
+    border-radius:24px!important;
+    box-shadow:0 18px 44px rgba(82,78,76,.12)!important;
+  }
+  .fum-main #top > div > div:nth-child(2) img {
+    object-fit:cover!important;
+    object-position:center 42%!important;
+  }
+
+  /* Bring the stats row closer to the hero and make it feel like one composition. */
+  .fum-main .fum > section.dark:not(.sec) {
+    padding:0 24px 72px!important;
+    background:linear-gradient(145deg,#f8f3ef 0%,#eee8e3 100%)!important;
+  }
+  .fum-main .fum > section.dark:not(.sec) > div:first-child {
+    max-width:1320px!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:14px!important;
+  }
+  .fum-main .fum > section.dark:not(.sec) > div:first-child > div {
+    padding:24px!important;
+    border-radius:20px!important;
+    min-height:128px!important;
+    justify-content:center!important;
+  }
+  .fum-main .fum > section.dark:not(.sec) > div:first-child > div > span:first-child {
+    font-size:clamp(25px,2.35vw,34px)!important;
+    line-height:1.12!important;
+    letter-spacing:-.035em!important;
+  }
+  .fum-main .fum > section.dark:not(.sec) > div:first-child > div > span:last-child {
+    font-size:14px!important;
+    line-height:1.45!important;
+    color:#59636e!important;
+  }
+  @media(max-width:900px) {
+    .fum-main #top { padding:96px 20px 36px!important; }
+    .fum-main #top > div { grid-template-columns:minmax(0,1.35fr) minmax(250px,.8fr)!important;gap:16px!important; }
+    .fum-main #top > div > div:first-child { padding:24px!important; }
+    .fum-main #top h1 { font-size:clamp(36px,5vw,48px)!important; }
+    .fum-main .fum > section.dark:not(.sec) > div:first-child { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+  }
+  @media(max-width:640px) {
+    .fum-main #top { padding:92px 16px 30px!important; }
+    .fum-main #top > div { grid-template-columns:1fr!important;gap:18px!important; }
+    .fum-main #top > div > div:first-child { padding:22px!important;gap:15px!important; }
+    .fum-main #top h1 { font-size:clamp(34px,9vw,44px)!important;line-height:1.08!important; }
+    .fum-main #top > div > div:first-child > p:not(:first-child) { font-size:16px!important; }
+    .fum-main #top > div > div:nth-child(2) { max-width:420px!important;margin:0 auto!important; }
+    .fum-main #top > div > div:nth-child(2) > div { max-height:none!important; }
+    .fum-main .fum > section.dark:not(.sec) { padding:0 16px 52px!important; }
+    .fum-main .fum > section.dark:not(.sec) > div:first-child { grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important; }
+    .fum-main .fum > section.dark:not(.sec) > div:first-child > div { padding:17px!important;min-height:112px!important; }
+  }
+
   @media(prefers-reduced-transparency:reduce) {
     .fum-main .grid>div,.fum-main .grid>figure,.fum-main .card,.fum-main .dcard,.fum-main .tbl {
       background:#f5f1ed!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
