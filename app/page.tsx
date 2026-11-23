@@ -209,6 +209,57 @@ const visualOverrides = `
       animation-iteration-count:1!important;transition-duration:.01ms!important;
     }
   }
+  /* Section 3: turn the legacy dark statistics strip into a light-glass band. */
+  .fum-main .fum > section.dark:not(.sec) {
+    color:#303945!important;
+    background:linear-gradient(145deg,#f8f3ef 0%,#eee8e3 100%)!important;
+  }
+  .fum-main .fum > section.dark:not(.sec) > div:first-child {
+    gap:14px!important;
+    overflow:visible!important;
+    background:transparent!important;
+    border-radius:0!important;
+  }
+  .fum-main .fum > section.dark:not(.sec) > div:first-child > div {
+    min-width:0;
+    border:1px solid rgba(255,255,255,.9)!important;
+    border-radius:20px!important;
+    background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(255,255,255,.68))!important;
+    box-shadow:0 12px 30px rgba(82,78,76,.07),inset 0 1px 0 #fff!important;
+  }
+  .fum-main .fum > section.dark:not(.sec) > div:first-child > div > span {
+    color:#34404c!important;
+    overflow-wrap:anywhere;
+  }
+  .fum-main .fum > section.dark:not(.sec) > div:first-child > div > span[style*="color:#F26363"] {
+    color:#c43b52!important;
+  }
+
+  /* Final CTA: preserve clear light text on the wine-red join card. */
+  .fum-main #tham-gia > div > div:first-child h2,
+  .fum-main #tham-gia > div > div:first-child p {
+    color:#fff!important;
+  }
+  .fum-main #tham-gia > div > div:first-child p {
+    color:rgba(255,255,255,.94)!important;
+  }
+  .fum-main #tham-gia > div > div:first-child .pill {
+    background:rgba(255,255,255,.12)!important;
+    color:#fff!important;
+    border:1.5px solid rgba(255,255,255,.86)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.22)!important;
+  }
+  .fum-main #tham-gia > div > div:last-child h2 { color:#303945!important; }
+  .fum-main #tham-gia > div > div:last-child p { color:#4b5662!important; }
+  .fum-main #tham-gia > div > div:last-child .pill {
+    color:#7e2637!important;
+    border:1.5px solid rgba(126,38,55,.3)!important;
+  }
+  @media(max-width:760px) {
+    .fum-main .fum > section.dark:not(.sec) { padding:0 18px 64px!important; }
+    .fum-main .fum > section.dark:not(.sec) > div:first-child { grid-template-columns:1fr!important; }
+  }
+
   @media(prefers-reduced-transparency:reduce) {
     .fum-main .grid>div,.fum-main .grid>figure,.fum-main .card,.fum-main .dcard,.fum-main .tbl {
       background:#f5f1ed!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
