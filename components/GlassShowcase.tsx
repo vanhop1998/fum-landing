@@ -21,9 +21,9 @@ export default function GlassShowcase() {
       </header>
 
       <GlassContainer className="ui-lab__content">
-        <div className="ui-lab__backdrop">
+        <div className="ui-lab__backdrop" data-lg-role="stage">
           <div className="ui-lab__glow" />
-          <GlassPanel className="ui-lab__panel">
+          <GlassPanel className="ui-lab__panel" data-lg-role="focus">
             <span className="ui-lab__eyebrow">FPTU DA NANG MEDIA CLUB</span>
             <h2>Clarity with depth.</h2>
             <p>Lớp kính được sử dụng có chọn lọc cho điều hướng và điều khiển; nội dung vẫn nằm trên bề mặt rõ nét.</p>
@@ -32,7 +32,7 @@ export default function GlassShowcase() {
               <GlassButton onClick={() => window.location.assign("/")}>Về landing page</GlassButton>
             </div>
           </GlassPanel>
-          <GlassCard className="ui-lab__card">
+          <GlassCard className="ui-lab__card" data-lg-role="rail">
             <strong>10 YEARS</strong>
             <span>13.09.2017 — 13.09.2027</span>
           </GlassCard>

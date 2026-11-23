@@ -114,7 +114,7 @@ export default function HomePage() {
       <div className="hero3d-backdrop" data-lg-role="stage" aria-hidden="true">
         <Hero3DLoader />
       </div>
-      <main className="fum-main" dangerouslySetInnerHTML={{ __html: content }} />
+      <main className="fum-main" data-lg-role="focus" dangerouslySetInnerHTML={{ __html: content }} />
       <Countdown />
     </>
   );
