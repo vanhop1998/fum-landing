@@ -29,7 +29,7 @@ export default function GlassNavbar() {
       >
         <nav className="glass-nav" aria-label="Điều hướng chính">
           <a className="glass-brand" href="#top" aria-label="FUM – Trang chủ">
-            <img src="/assets/logo_white.png" alt="FUM" width="84" height="32" />
+            <img src="/assets/logo_red.png" alt="FUM" width="84" height="32" />
             <span>CLB Truyền thông FUM</span>
           </a>
 
