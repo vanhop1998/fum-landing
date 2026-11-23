@@ -103,7 +103,33 @@ const visualOverrides = `
       animation-iteration-count: 1 !important;
       transition-duration: .01ms !important;
     }
-  }
+  } 
+  /* Full-page Liquid Glass art direction */
+  .fum-main{color:#f4f4f6!important;background:#0b0b0e!important}.fum-main .fum{color:#f4f4f6!important;background:transparent!important}
+  .fum-main .sec{position:relative;color:#f4f4f6!important;background:radial-gradient(ellipse at 12% 0%,rgba(154,0,0,.12),transparent 38%),linear-gradient(145deg,#111115 0%,#0b0b0e 58%,#111014 100%)!important;border-top:1px solid rgba(255,255,255,.055);border-bottom:1px solid rgba(255,255,255,.045)}
+  .fum-main .sec.grey{background:radial-gradient(ellipse at 88% 10%,rgba(242,99,99,.12),transparent 34%),linear-gradient(145deg,#17171c 0%,#101014 58%,#191418 100%)!important}
+  .fum-main .sec.dark{background:radial-gradient(ellipse at 80% 12%,rgba(154,0,0,.17),transparent 38%),linear-gradient(145deg,#09090c 0%,#121216 52%,#0c0b0f 100%)!important}
+  .fum-main #top{min-height:min(780px,92vh);display:flex;align-items:center;padding-top:150px!important;background:radial-gradient(ellipse at 76% 30%,rgba(154,0,0,.3),transparent 36%),radial-gradient(ellipse at 15% 82%,rgba(242,99,99,.1),transparent 32%),linear-gradient(130deg,#08080b 0%,#151116 55%,#0b0b0e 100%)!important}
+  .fum-main .wrap{position:relative;z-index:1}.fum-main .h2,.fum-main h1,.fum-main h2,.fum-main h3,.fum-main h4{color:#f7f7f8!important;text-wrap:pretty}.fum-main .h2{letter-spacing:-.045em!important;line-height:1.08!important}
+  .fum-main p,.fum-main li,.fum-main td,.fum-main figcaption,.fum-main blockquote,.fum-main summary{color:rgba(245,245,248,.78)!important}.fum-main .lead{color:rgba(239,239,244,.72)!important}.fum-main .eyebrow,.fum-main .small{color:#f28a8a!important}.fum-main .num{color:#ff7777!important}
+  .fum-main .grid>div,.fum-main .grid>figure,.fum-main .card,.fum-main .dcard{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.13)!important;border-radius:22px!important;background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.025) 55%,rgba(154,0,0,.055))!important;box-shadow:0 18px 48px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.13)!important;backdrop-filter:blur(18px) saturate(1.35);-webkit-backdrop-filter:blur(18px) saturate(1.35);transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+  .fum-main .grid>div:hover,.fum-main .grid>figure:hover,.fum-main .card:hover,.fum-main .dcard:hover{transform:translateY(-5px);border-color:rgba(242,99,99,.42)!important;box-shadow:0 24px 60px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.2)!important}
+  .fum-main .grid img,.fum-main .card img,.fum-main .dcard img{filter:saturate(.88) contrast(1.04);transition:transform .55s ease,filter .55s ease}.fum-main .grid>div:hover img,.fum-main .grid>figure:hover img{transform:scale(1.035);filter:saturate(1.08) contrast(1.05)}
+  .fum-main .tbl{border:1px solid rgba(255,255,255,.16)!important;background:rgba(255,255,255,.055)!important;border-radius:20px!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+  .fum-main table{color:rgba(245,245,248,.82)!important}.fum-main th{color:#ff9999!important;border-bottom-color:rgba(255,255,255,.2)!important}.fum-main td{border-bottom-color:rgba(255,255,255,.1)!important}.fum-main .ev{color:rgba(245,245,248,.78)!important}
+  .fum-main details{border-bottom-color:rgba(255,255,255,.15)!important}.fum-main summary{color:#f7f7f8!important}.fum-main .ph,.fum-main .phl{color:rgba(255,255,255,.62)!important;background:rgba(255,255,255,.075)!important;border:1px dashed rgba(255,255,255,.22)!important;backdrop-filter:blur(12px)}
+  .fum-main a:not(.pill){color:#f5caca}.fum-main a:not(.pill):hover{color:#fff}
+  .fum-main .pill{min-height:50px!important;border:1px solid rgba(255,255,255,.24)!important;border-radius:999px!important;background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.055))!important;color:#fff!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 12px 30px rgba(0,0,0,.2)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+  .fum-main #tham-gia .pill,.fum-main a.pill[style*="#9A0000"]{background:linear-gradient(135deg,#c51b28,#78000a)!important;border-color:rgba(255,255,255,.25)!important;color:#fff!important;box-shadow:0 12px 34px rgba(154,0,0,.28),inset 0 1px 0 rgba(255,255,255,.25)!important}
+  .fum-main #tham-gia>div>div{border:1px solid rgba(255,255,255,.18)!important;border-radius:26px!important;box-shadow:0 24px 60px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.18)!important}
+  .fum-main #tham-gia>div>div:first-child{background:linear-gradient(140deg,rgba(176,8,24,.92),rgba(85,0,8,.86))!important;backdrop-filter:blur(18px)}.fum-main #tham-gia>div>div:last-child{background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.035))!important;color:#fff!important;backdrop-filter:blur(18px)}
+  .fum-main footer{color:rgba(255,255,255,.72)!important;background:linear-gradient(135deg,#09090c,#171116)!important;border-top:1px solid rgba(255,255,255,.13)}.fum-main footer a{color:#f3c5c5!important}
+  .fum-main #daysLeft,.fum-main #hLeft,.fum-main #mLeft,.fum-main #sLeft{color:#ff8585!important}
+  .fum-main [style*="background:#18181C"],.fum-main [style*="background: #18181C"],.fum-main [style*="background:#141417"],.fum-main [style*="background:#0E0E10"],.fum-main [style*="background:#F4F4F5"],.fum-main [style*="background:#fff"],.fum-main [style*="background: #fff"]{background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.035))!important;border-color:rgba(255,255,255,.14)!important}
+  .fum-main [style*="color:#111113"],.fum-main [style*="color: #111113"],.fum-main [style*="color:#4B4B52"],.fum-main [style*="color: #4B4B52"],.fum-main [style*="color:#33333A"]{color:rgba(245,245,248,.78)!important}
+  @media(max-width:760px){.fum-main #top{min-height:auto;padding-top:126px!important}.fum-main .sec{padding-top:68px!important;padding-bottom:68px!important}.fum-main .wrap{gap:28px!important}.fum-main .grid{gap:14px!important}.fum-main .grid>div,.fum-main .grid>figure,.fum-main .card,.fum-main .dcard{border-radius:18px!important}}
+  @media(prefers-reduced-transparency:reduce){.fum-main .grid>div,.fum-main .grid>figure,.fum-main .card,.fum-main .dcard,.fum-main .tbl{background:#17171c!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}
+
 `;
 
 export default function HomePage() {
