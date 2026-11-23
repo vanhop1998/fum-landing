@@ -1,0 +1,125 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #0e0e10; color: #111113; font-family: "Be Vietnam Pro", system-ui, sans-serif; }
+button, a { font: inherit; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #f26363; outline-offset: 3px; }
+.glass-nav-wrap {
+  position: sticky;
+  top: 12px;
+  z-index: 1000;
+  width: 100%;
+  margin: 12px auto -76px;
+  pointer-events: none;
+}
+.glass-nav-wrap > * { pointer-events: auto; }
+.glass-nav {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: #fff;
+}
+.glass-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 700;
+}
+.glass-brand img { display: block; width: 84px; height: 32px; object-fit: contain; }
+.glass-links { display: flex; align-items: center; justify-content: flex-end; gap: clamp(10px,1.5vw,24px); }
+.glass-links a {
+  color: rgba(255,255,255,.88);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color .2s ease;
+}
+.glass-links a:hover { color: #fff; }
+.glass-links .glass-join {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg,#b20a0a,#790000);
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 8px 24px rgba(154,0,0,.24);
+}
+.glass-menu-toggle { display: none; }
+.glass-button-surface { display: inline-flex; }
+.glass-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(255,255,255,.08);
+}
+.glass-button--primary { background: #9a0000; }
+.glass-card-surface { display: block; }
+.glass-card { display: flex; flex-direction: column; gap: 8px; padding: 22px; color: white; }
+.glass-panel, .glass-container {
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 24px;
+  background: linear-gradient(145deg,rgba(255,255,255,.15),rgba(255,255,255,.035));
+  backdrop-filter: blur(14px) saturate(1.45);
+  -webkit-backdrop-filter: blur(14px) saturate(1.45);
+  box-shadow: 0 24px 70px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.28);
+}
+.glass-tabs { display: inline-flex; gap: 5px; padding: 5px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; background: rgba(255,255,255,.08); }
+.glass-tabs button { border: 0; border-radius: 999px; padding: 10px 16px; color: rgba(255,255,255,.72); background: transparent; cursor: pointer; }
+.glass-tabs button.is-active { color: #fff; background: rgba(255,255,255,.18); box-shadow: inset 0 1px 0 rgba(255,255,255,.3); }
+.glass-modal { width: min(520px,calc(100vw - 32px)); border: 1px solid rgba(255,255,255,.3); border-radius: 24px; padding: 0; color: white; background: rgba(20,20,24,.88); backdrop-filter: blur(24px); box-shadow: 0 30px 100px rgba(0,0,0,.45); }
+.glass-modal::backdrop { background: rgba(0,0,0,.58); backdrop-filter: blur(5px); }
+.glass-modal__inner { padding: 28px; }
+.glass-modal__heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.glass-modal__heading h2 { margin: 0; font-size: 22px; }
+.glass-modal__heading button { border: 0; background: transparent; color: white; font-size: 28px; cursor: pointer; }
+.ui-lab { min-height: 100vh; padding: 48px 24px 80px; color: #fff; background: radial-gradient(ellipse at 70% 20%,rgba(154,0,0,.28),transparent 35%),#0e0e10; }
+.ui-lab__header, .ui-lab__content { width: min(1080px,100%); margin: 0 auto; }
+.ui-lab__header { display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; }
+.ui-lab__back { color: #f26363; text-decoration: none; font-weight: 700; }
+.ui-lab__header p, .ui-lab__eyebrow { color: #f26363; font-size: 12px; font-weight: 700; letter-spacing: .14em; }
+.ui-lab__header h1 { margin: 0; font-size: clamp(42px,7vw,76px); letter-spacing: -.055em; }
+.ui-lab__header span, .ui-lab__section p { color: #c9c9ce; }
+.ui-lab__content { padding: 24px; }
+.ui-lab__backdrop { min-height: 420px; position: relative; overflow: hidden; display: grid; place-items: center; border-radius: 20px; background: linear-gradient(125deg,#25191d,#09090b 56%,#411012); }
+.ui-lab__glow { position: absolute; width: 440px; height: 440px; border-radius: 50%; background: radial-gradient(circle,rgba(242,99,99,.5),transparent 68%); filter: blur(20px); }
+.ui-lab__panel { z-index: 1; width: min(560px,calc(100% - 32px)); padding: 32px; color: #fff; }
+.ui-lab__panel h2 { margin: 8px 0; font-size: clamp(30px,5vw,52px); }
+.ui-lab__panel p { max-width: 460px; color: rgba(255,255,255,.78); line-height: 1.7; }
+.ui-lab__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.ui-lab__card { position: absolute; right: 24px; bottom: 24px; z-index: 2; }
+.ui-lab__card strong { font-size: 26px; }
+.ui-lab__card span { font-size: 12px; color: rgba(255,255,255,.7); }
+.ui-lab__section { padding: 28px 8px 8px; }
+.ui-lab__section h2 { margin-top: 0; }
+@media (max-width: 980px) {
+  .glass-nav-wrap { width: calc(100% - 24px); }
+  .glass-brand span { display: none; }
+  .glass-links { gap: 12px; }
+  .glass-links a { font-size: 12px; }
+}
+@media (max-width: 720px) {
+  .glass-nav-wrap { top: 8px; margin-top: 8px; margin-bottom: -68px; }
+  .glass-nav { min-height: 52px; }
+  .glass-menu-toggle { display: flex; flex-direction: column; gap: 5px; justify-content: center; width: 42px; height: 42px; padding: 10px; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; background: rgba(255,255,255,.1); }
+  .glass-menu-toggle span { height: 1.5px; width: 100%; background: white; }
+  .glass-links { display: none; position: absolute; top: calc(100% + 10px); left: 0; right: 0; padding: 14px; flex-direction: column; align-items: stretch; border: 1px solid rgba(255,255,255,.22); border-radius: 18px; background: rgba(18,18,22,.92); backdrop-filter: blur(18px); box-shadow: 0 20px 50px rgba(0,0,0,.3); }
+  .glass-links.is-open { display: flex; }
+  .glass-links a { padding: 10px 8px; font-size: 14px; }
+  .glass-links .glass-join { justify-content: center; }
+  .ui-lab { padding: 28px 14px 56px; }
+  .ui-lab__content { padding: 12px; }
+  .ui-lab__backdrop { min-height: 500px; }
+  .ui-lab__card { left: 18px; right: auto; bottom: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
